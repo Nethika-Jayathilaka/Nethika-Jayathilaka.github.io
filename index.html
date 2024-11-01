@@ -8,54 +8,19 @@
     <style>
       /* Set the model viewer size */
       model-viewer {
-        width: 100%;
-        max-width: 600px; /* Set a max width for larger screens */
-        height: 400px;
+        width: 100vw;
+        height: auto;
+        aspect-ratio: 1/1;
       }
     </style>
   </head>
   <body>
-    <!-- Import the component -->
-    <script
-      type="module"
-      src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"
-    ></script>
-
-    <!-- Use model-viewer with AR and camera controls -->
     <model-viewer
       id="mv-business"
-      src="phoenix_bird.glb"
+      src="crypt_location.glb"
       camera-controls
       ar
       ar-modes="scene-viewer quick-look webxr"
-      field-of-view="45deg"
     ></model-viewer>
-
-    <button onclick="zoomIn()">Zoom In</button>
-    <button onclick="zoomOut()">Zoom Out</button>
-
-    <script>
-      const modelViewer = document.getElementById("mv-business");
-
-      // Function to zoom in
-      function zoomIn() {
-        modelViewer.fieldOfView = "30deg";
-      }
-
-      // Function to zoom out
-      function zoomOut() {
-        modelViewer.fieldOfView = "45deg";
-      }
-
-      // Optional: Adjust the field of view on click for more interactive zoom
-      modelViewer.addEventListener("click", () => {
-        modelViewer.fieldOfView =
-          modelViewer.fieldOfView === "45deg" ? "30deg" : "45deg";
-      });
-    </script>
   </body>
 </html>
