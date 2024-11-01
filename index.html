@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Test AR</title>
+    <title>Test AR with Zoom</title>
   </head>
   <body>
     <!-- Import the component -->
@@ -16,13 +16,38 @@
       src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"
     ></script>
 
-    <!-- Use it like any other HTML element with AR enabled -->
+    <!-- Use model-viewer with AR and camera controls -->
     <model-viewer
-      id="mv-shark"
-      src="phoenix_bird.glb"
+      id="mv-business"
+      src="business-model.glb"
       camera-controls
       ar
-      ar-modes="webxr scene-viewer quick-look"
+      ar-modes="scene-viewer quick-look webxr"
+      ios-src="business-model.usdz"
+      field-of-view="45deg"
     ></model-viewer>
+
+    <button onclick="zoomIn()">Zoom In</button>
+    <button onclick="zoomOut()">Zoom Out</button>
+
+    <script>
+      const modelViewer = document.getElementById("mv-business");
+
+      // Function to zoom in
+      function zoomIn() {
+        modelViewer.fieldOfView = "30deg";
+      }
+
+      // Function to zoom out
+      function zoomOut() {
+        modelViewer.fieldOfView = "45deg";
+      }
+
+      // Optional: Adjust the field of view on click for more interactive zoom
+      modelViewer.addEventListener("click", () => {
+        modelViewer.fieldOfView =
+          modelViewer.fieldOfView === "45deg" ? "30deg" : "45deg";
+      });
+    </script>
   </body>
 </html>
