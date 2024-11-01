@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AR Testing</title>
+    <title>Test AR</title>
   </head>
   <body>
     <!-- Import the component -->
@@ -15,13 +15,15 @@
       nomodule
       src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"
     ></script>
-    <!-- Use it like any other HTML element -->
-    <h1>This is for testing ar</h1>
+
+    <!-- Use it like any other HTML element with AR enabled -->
     <model-viewer
       id="mv-shark"
       src="shiba.glb"
       camera-controls
       ar
+      ar-modes="scene-viewer quick-look webxr"
+      ios-src="earth.usdz"
     ></model-viewer>
   </body>
 </html>
