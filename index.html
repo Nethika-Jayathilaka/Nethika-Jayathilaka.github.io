@@ -6,22 +6,16 @@
     <title>AR Testing</title>
   </head>
   <body>
-    <h1>THIS IS TO TEST AR</h1>
-    <model-viewer
-      id="reveal"
-      loading="eager"
-      camera-controls
-      touch-action="pan-y"
-      auto-rotate
-      tone-mapping="aces"
-      src="shiba.glb"
-      shadow-intensity="1"
-      alt="A 3D model of a shishkebab"
-    ></model-viewer>
-    <script type="model" src="model-viewer.min.js"></script>
+    <!-- Import the component -->
+    <script
+      type="module"
+      src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
+    ></script>
     <script
       nomodule
       src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"
     ></script>
+    <!-- Use it like any other HTML element -->
+    <model-viewer id="mv-shark" src="shark.glb" camera-controls></model-viewer>
   </body>
 </html>
