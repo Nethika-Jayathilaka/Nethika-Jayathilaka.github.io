@@ -1,1 +1,0 @@
-# Nethika-Jayathilaka.github.io
