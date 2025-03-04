@@ -10,13 +10,13 @@
   <body>
     <!-- <model-viewer> HTML element -->
     <model-viewer
-      src="test.glb"
+      src="demo_model.glb"
       ar
       ar-modes="scene-viewer webxr quick-look"
       camera-controls
       shadow-intensity="2"
       shadow-softness="1"
-      ios-src="test.usdz"
+      ios-src="demo_model.usdz"
     >
       <div class="progress-bar hide" slot="progress-bar">
         <div class="update-bar"></div>
@@ -30,7 +30,7 @@
     <!-- Loads <model-viewer> for browsers: -->
     <script
       type="module"
-      src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"
+      src="model-viewer.min.js"
     ></script>
   </body>
 </html>
